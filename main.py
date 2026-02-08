@@ -879,14 +879,14 @@ async def txt_handler(bot: Client, m: Message):
             elif "youtube.com" in url or "youtu.be" in url:
     cmd = (
         'yt-dlp '
-        '-o "%(id)s.%(ext)s" '
         '--extractor-args "youtube:player_client=android" '
         '--downloader ffmpeg '
         '--hls-use-mpegts '
         '--merge-output-format mp4 '
-        '--no-playlist '
+        f'-o "{name}.mp4" '
         f'"{url}"'
     )
+
 
 
             try:
